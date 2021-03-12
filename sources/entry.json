@@ -1,0 +1,6 @@
+{
+  "admin": [
+    "./styles/admin.scss",
+    "./scripts/admin.js"
+  ]
+}

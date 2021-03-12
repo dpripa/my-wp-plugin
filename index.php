@@ -1,0 +1,28 @@
+<?php
+/**
+ * Plugin Name:       My Custom Plugin
+ * Plugin URI:        https://www.github.com/dpripa/my-wp-plugin
+ * Description:       Just my WordPress custom plugin
+ * Version:           1.0.0
+ * Text Domain:       my_plugin
+ * Author:            Some Developers
+ * Author URI:        https://www.github.com/dpripa
+ */
+
+namespace My_Plugin;
+
+defined( 'ABSPATH' ) || exit;
+
+define( 'MY_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
+define( 'MY_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+
+$composer = MY_CORE_PATH . 'vendor/autoload.php';
+if ( ! file_exists( $composer ) ) {
+	wp_die(
+		__( 'You must run <code>composer install</code> from the plugin directory.', 'my_plugin' ), // @codingStandardsIgnoreLine WordPress.Security.EscapeOutput.OutputNotEscaped
+		esc_html__( 'Autoloader not found', 'my_plugin' )
+	);
+}
+require_once $composer;
+
+new Setup();
