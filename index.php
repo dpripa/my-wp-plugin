@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
 define( 'MY_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'MY_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
-$composer = MY_CORE_PATH . 'vendor/autoload.php';
+$composer = MY_PLUGIN_PATH . 'vendor/autoload.php';
 if ( ! file_exists( $composer ) ) {
 	wp_die(
 		__( 'You must run <code>composer install</code> from the plugin directory.', 'my_plugin' ), // @codingStandardsIgnoreLine WordPress.Security.EscapeOutput.OutputNotEscaped
