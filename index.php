@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name:       My Custom Plugin
- * Plugin URI:        https://www.github.com/dpripa/my-wp-plugin
- * Description:       Just my WordPress custom plugin
- * Version:           1.0.0
- * Text Domain:       my_plugin
- * Author:            Some Developers
- * Author URI:        https://www.github.com/dpripa
+ * Plugin Name: My Custom Plugin
+ * Plugin URI:  https://www.github.com/dpripa/my-wp-plugin
+ * Description: Just my WordPress custom plugin
+ * Version:     0.9.0
+ * Text Domain: my_plugin
+ * Author:      Some Developers
+ * Author URI:  https://www.github.com/dpripa
  */
 
 namespace My_Plugin;

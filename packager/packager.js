@@ -4,15 +4,14 @@ const log = require( 'log-beautify' );
 const config = require( './config' );
 
 function setMainFileVersion() {
-	if ( fs.existsSync( config.basePath + config.mainFile.path ) ) {
-		fs.readFile( config.basePath + config.mainFile.path, 'utf8', function( err, data ) {
+	if ( fs.existsSync( config.basePath + config.mainFile ) ) {
+		fs.readFile( config.basePath + config.mainFile, 'utf8', function( err, data ) {
 			if ( err ) {
 				return console.error( err );
 			}
-			const prefix = config.mainFile.versionPrefix;
-			const result = data.replace( prefix + /(\d+\.)(\d+\.)(\d)/g, prefix + config.version );
+			const result = data.replace( /(\d+\.\d+\.\d+)/, config.version );
 
-			fs.writeFile( config.mainFile.path, result, 'utf8', function( err ) {
+			fs.writeFile( config.basePath + config.mainFile, result, 'utf8', function( err ) {
 				if ( err ) {
 					return console.error( err );
 				}
@@ -63,6 +62,6 @@ function createArchive() {
 }
 
 setMainFileVersion();
-setPackageVersion( config.packageJson );
-setPackageVersion( config.composerJson );
+setPackageVersion( config.basePath + config.packageJson );
+setPackageVersion( config.basePath + config.composerJson );
 createArchive();
