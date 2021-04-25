@@ -9,6 +9,8 @@ class Admin {
 	use Abstracts\Singable;
 
 	public function __construct() {
+		$this->check_singable_instance();
+
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_assets' ) );
 	}
 

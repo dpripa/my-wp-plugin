@@ -22,7 +22,7 @@ $composer = MY_PLUGIN_PATH . 'vendor/autoload.php';
 
 if ( ! file_exists( $composer ) ) {
 	wp_die(
-		__( 'You must run <code>composer install</code> from the plugin directory.', TEXTDOMAIN ), // @codingStandardsIgnoreLine WordPress.Security.EscapeOutput.OutputNotEscaped
+		__( 'You must run <code>composer install --no-dev</code> from the plugin directory.', TEXTDOMAIN ), // @codingStandardsIgnoreLine WordPress.Security.EscapeOutput.OutputNotEscaped
 		esc_html__( 'Autoloader not found', TEXTDOMAIN )
 	);
 }

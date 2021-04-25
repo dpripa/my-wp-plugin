@@ -9,6 +9,8 @@ final class Setup {
 	use Abstracts\Singable;
 
 	public function __construct() {
+		$this->check_singable_instance();
+
 		add_action( 'plugins_loaded', array( $this, 'plugin_loaded' ) );
 	}
 
