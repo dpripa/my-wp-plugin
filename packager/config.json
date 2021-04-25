@@ -1,7 +1,7 @@
 {
 	"name": "my-wp-plugin",
 	"version": "0.9.0",
-	"basePath": "../",
+	"rootPath": "../",
 	"mainFile": "index.php",
   "packageJson": "sources/package.json",
   "composerJson": "composer.json",

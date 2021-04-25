@@ -6,12 +6,14 @@ defined( 'ABSPATH' ) || exit;
 
 final class Setup {
 
+	use Abstracts\Singable;
+
 	public function __construct() {
 		add_action( 'plugins_loaded', array( $this, 'plugin_loaded' ) );
 	}
 
-	public function plugin_loaded() {
-		load_plugin_textdomain( 'my_plugin', false, MY_CORE_PATH . 'languages' );
+	public function plugin_loaded(): void {
+		load_plugin_textdomain( TEXTDOMAIN, false, MY_PLUGIN_PATH . 'languages' );
 
 		new Admin();
 	}

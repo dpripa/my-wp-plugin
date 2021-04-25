@@ -1,10 +1,10 @@
 <?php
 
-namespace My_Plugin;
+namespace My_Plugin\Helpers;
 
 defined( 'ABSPATH' ) || exit;
 
-class Utils {
+class General {
 
 	public static function enqueue_style( string $handle, string $slug, array $deps = array() ) {
 		wp_enqueue_style( $handle, MY_PLUGIN_URL . 'assets/styles/' . $slug . '.min.css', $deps, filemtime( MY_PLUGIN_PATH . 'assets/styles/' . $slug . '.min.css' ) );
