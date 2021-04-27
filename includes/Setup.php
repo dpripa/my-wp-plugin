@@ -11,10 +11,10 @@ final class Setup {
 	public function __construct() {
 		$this->check_singable_instance();
 
-		add_action( 'plugins_loaded', array( $this, 'plugin_loaded' ) );
+		add_action( 'plugins_loaded', array( $this, 'setup' ) );
 	}
 
-	public function plugin_loaded(): void {
+	public function setup(): void {
 		load_plugin_textdomain( TEXTDOMAIN, false, MY_PLUGIN_PATH . 'languages' );
 
 		new Admin();
